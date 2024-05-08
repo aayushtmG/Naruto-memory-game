@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 import Card from "./Card"
-
 function CardGrid({ reset, endRound, incrementScore }) {
   const nameList = [
     "naruto",
@@ -33,7 +32,7 @@ function CardGrid({ reset, endRound, incrementScore }) {
   }, [])
 
   return (
-    <div className="px-8 grid grid-cols-2 py-2 sm:grid-cols-3 lg:grid-cols-4  2xl:grid-cols-6 place-items-center gap-8">
+    <div className="px-8 grid grid-cols-2 py-2 sm:grid-cols-3 lg:grid-cols-6  2xl:grid-cols-6 place-items-center gap-8">
       {arr.map((name) => (
         <Card
           name={name}
