@@ -1,25 +1,31 @@
-import React, { useState } from "react"
-function Card({ name, onClick, resetGame }) {
+import React, { useEffect, useState } from "react"
+function Card({ shuffle, reset, name, endRound, incrementScore }) {
   const [isClicked, setIsClicked] = useState(false)
-  const handleClick = (e) => {
+  const handleClick = () => {
     if (isClicked) {
-      resetGame()
+      endRound()
     } else {
-      onClick()
+      incrementScore()
     }
+    shuffle()
     setIsClicked(!isClicked)
   }
+  useEffect(() => {
+    if (reset == true) {
+      setIsClicked(false)
+    }
+  }, [reset])
   return (
     <div
-      className="flex flex-col items-center w-[200px] h-[250px]  hover:shadow-2xl hover:shadow-[#31363F]  bg-cardColor p-2 rounded-lg cursor-pointer 2xl:w-[260px] 2xl:h-[350px]"
+      className="flex flex-col items-center w-[150px] h-[150px] md:w-[200px] md:h-[250px]  hover:shadow-2xl hover:shadow-[#31363F]  bg-cardColor  p-1 md:p-2 rounded-lg cursor-pointer 2xl:w-[260px] 2xl:h-[350px]"
       onClick={handleClick}
     >
       <img
         src={`/src/assets/images/${name}.jpg`}
         alt={`${name} image`}
-        className="h-full object-cover rounded-md  max-h-[200px] 2xl:max-h-[300px] w-full  object-top  "
+        className=" h-full object-cover rounded-md  max-h-[200px] 2xl:max-h-[300px] w-full  object-top  "
       />
-      <p className="uppercase text-primary font-semibold tracking-wide text-xl mt-2">
+      <p className="hidden sm:block uppercase text-primary font-semibold tracking-wide text-sm md:text-xl mt-2">
         {name}
       </p>
     </div>

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 export default function NavBar({ score, bestScore }) {
   return (
     <div className="bg-[#31363F]  ">
-      <div className="flex  text-lg text-white container mx-auto  justify-between py-4">
+      <div className="flex flex-col text-sm sm:flex-row md:text-lg text-white container mx-auto items-center justify-between py-2 md:py-4">
         <h1 className="">
           The Odin Project Memory Game{" "}
           <span className="text-cardColor">(Naruto Theme)</span>

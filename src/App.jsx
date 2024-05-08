@@ -5,15 +5,29 @@ import CardGrid from "./components/CardGrid"
 function App() {
   const [score, setScore] = useState(0)
   const [bestScore, setBestScore] = useState(0)
+  const [reset, setReset] = useState(true)
+
+  const endRound = () => {
+    if (score > bestScore) {
+      setBestScore(score)
+    }
+    setReset(true)
+    setScore(0)
+    alert("You lose!")
+  }
+
+  const incrementScore = () => {
+    setScore(() => score + 1)
+    setReset(false)
+  }
   return (
     <>
       <NavBar score={score} bestScore={bestScore} />
       <HintButton />
       <CardGrid
-        score={score}
-        setScore={setScore}
-        bestScore={bestScore}
-        setBestScore={setBestScore}
+        incrementScore={incrementScore}
+        endRound={endRound}
+        reset={reset}
       />
     </>
   )
