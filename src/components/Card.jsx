@@ -21,7 +21,7 @@ function Card({ shuffle, reset, name, endRound, incrementScore }) {
       onClick={handleClick}
     >
       <img
-        src={`/src/assets/images/${name}.jpg`}
+        src={`/assets/images/${name}.jpg`}
         alt={`${name} image`}
         className=" h-full object-cover rounded-md  max-h-[200px] 2xl:max-h-[300px] w-full  object-top  "
       />
