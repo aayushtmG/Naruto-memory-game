@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from "react"
-
 export default function NavBar({ score, bestScore }) {
   return (
     <div className="bg-[#31363F]  ">

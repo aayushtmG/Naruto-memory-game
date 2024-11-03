@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import  { useEffect, useState } from "react"
 function Card({ shuffle, reset, name, endRound, incrementScore }) {
   const [isClicked, setIsClicked] = useState(false)
   const handleClick = () => {
